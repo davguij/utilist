@@ -1,11 +1,12 @@
 name: CI
 on: [push]
 jobs:
-  build:
+  install_dependencies:
     runs-on: ubuntu-latest
+    name: Install dependencies
 
     steps:
-      - name: Begin CI...
+      - name: Check out repository
         uses: actions/checkout@v2
 
       - name: Use Node 12
@@ -25,6 +26,31 @@ jobs:
         run: yarn install --frozen-lockfile
         env:
           CI: true
+
+      - name: Save node_modules folder as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: node_modules
+          path: node_modules
+
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    needs: install_dependencies
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Use Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Retrieve node_modules folder from artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: node_modules
+          path: node_modules
 
       - name: Lint
         run: yarn lint
