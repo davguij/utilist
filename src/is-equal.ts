@@ -1,6 +1,13 @@
 import { GenericObject } from './interfaces/generics';
 import { isDate } from './is-date';
 
+/**
+ * Compares two objects and returns whether their values are equivalent
+ *
+ * @typeParam T Type of objects to compare. Both of them have to be of the same type. Type has to extend the standard, generic JavaScript object (with strings as keys).
+ * @param firstObject The first object to compare
+ * @param secondObject The second object to compare
+ */
 export function isEqual<T extends GenericObject>(
   firstObject: T,
   secondObject: T
