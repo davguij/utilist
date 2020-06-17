@@ -67,3 +67,42 @@ jobs:
         run: yarn build
         env:
           CI: true
+
+  docs:
+    runs-on: ubuntu-latest
+    name: Generate and publish documentation
+    needs: lint_test
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Use Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Use cached node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: nodeModules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            nodeModules-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+        env:
+          CI: true
+
+      - name: Compile docs
+        run: yarn docs:compile
+
+      - name: Build documentation site
+        run: yarn docs:build
+
+      - name: Deploy documentation site to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/.vuepress/dist
