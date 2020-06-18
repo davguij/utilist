@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Generate and publish documentation
     needs: lint_test
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
