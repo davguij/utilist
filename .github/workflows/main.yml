@@ -68,10 +68,61 @@ jobs:
         env:
           CI: true
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist/ # or path/to/artifact
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: packageJson
+          path: package.json # or path/to/artifact
+
+  release:
+    runs-on: ubuntu-latest
+    name: Generate and publish documentation
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      # - name: Check out repository
+      #   uses: actions/checkout@v2
+
+      # - name: Use Node 12
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12.x
+
+      # - name: Use cached node_modules
+      #   uses: actions/cache@v1
+      #   with:
+      #     path: node_modules
+      #     key: nodeModules-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       nodeModules-
+
+      # - name: Install dependencies
+      #   run: yarn install --frozen-lockfile
+      #   env:
+      #     CI: true
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: packageJson
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+
   docs:
     runs-on: ubuntu-latest
     name: Generate and publish documentation
-    needs: lint_test
+    needs: build
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Check out repository
