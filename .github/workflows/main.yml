@@ -69,14 +69,10 @@ jobs:
           CI: true
 
       - uses: actions/upload-artifact@v2
+        name: Store dist folder to artifacts
         with:
           name: dist
           path: dist/ # or path/to/artifact
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: packageJson
-          path: package.json # or path/to/artifact
 
   release:
     runs-on: ubuntu-latest
@@ -93,12 +89,9 @@ jobs:
           node-version: 12.x
 
       - uses: actions/download-artifact@v2
+        name: Load dist folder from artifacts
         with:
           name: dist
-
-      - uses: actions/download-artifact@v2
-        with:
-          name: packageJson
 
       - name: Release
         env:
