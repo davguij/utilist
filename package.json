@@ -1,4 +1,6 @@
 {
+  "name": "utilist",
+  "description": "A modern utility library for JavaScript and TypeScript.",
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,7 +17,6 @@
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "docs:compile": "rimraf docs && typedoc ./src --plugin typedoc-plugin-markdown --theme vuepress --out docs && copyfiles -u -a \".vuepress/*.js\" docs",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
@@ -26,15 +27,8 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "name": "tsdash",
   "author": "David Guijarro",
-  "module": "dist/tsdash.esm.js",
+  "module": "dist/utilist.esm.js",
   "devDependencies": {
     "copyfiles": "^2.3.0",
     "husky": "^4.2.5",
