@@ -94,8 +94,7 @@ jobs:
           name: dist
 
       - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: dist
+        run: ls -lha
 
       - name: Release
         env:
