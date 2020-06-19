@@ -92,9 +92,7 @@ jobs:
         name: Load dist folder from artifacts
         with:
           name: dist
-
-      - name: Display structure of downloaded files
-        run: ls -lha
+          path: dist
 
       - name: Release
         env:
