@@ -3,6 +3,7 @@
   "description": "A modern utility library for JavaScript and TypeScript.",
   "version": "0.0.0-development",
   "license": "MIT",
+  "sideEffects": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
