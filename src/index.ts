@@ -3,3 +3,4 @@ export * from './is-equal';
 export * from './random';
 export * from './sample';
 export * from './shuffle';
+export * from './omit';
