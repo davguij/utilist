@@ -12,14 +12,14 @@ describe('isEqual', () => {
   });
 
   it('should return false if two objects are not deeply equal', () => {
-    const o1 = {
+    const o1: any = {
       property: {
         nested: 'value',
       },
     };
-    const o2 = {
+    const o2: any = {
       property: {
-        nested: 'different value',
+        nested: false,
       },
     };
     expect(isEqual(o1, o2)).toEqual(false);
