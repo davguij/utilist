@@ -1,5 +1,7 @@
 # utilist
 
+![npm](https://img.shields.io/npm/v/utilist?color=red&logo=npm) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/utilist) ![CI](https://github.com/davguij/utilist/workflows/CI/badge.svg)
+
 A modern utility library for JavaScript and TypeScript, both for the browser and for Node.js, that helps you solve routine tasks and common problems in a fast way, therefore letting you focus on what matters (building awesome stuff!)
 
 ## Why **utilist**
