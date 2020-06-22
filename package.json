@@ -17,7 +17,7 @@
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "docs:compile": "rimraf docs && typedoc ./src --plugin typedoc-plugin-markdown --theme vuepress --out docs && copyfiles -u -a \".vuepress/*.js\" docs",
+    "docs:compile": "rimraf docs && typedoc --options && copyfiles -u -a \".vuepress/*.js\" docs",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },

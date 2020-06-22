@@ -5,6 +5,6 @@ module.exports = {
   title: 'utilist',
   description: 'A modern utility library for JavaScript and TypeScript.',
   themeConfig: {
-    sidebar: [...apiSideBar],
+    sidebar: [{ title: 'API', children: apiSideBar }],
   },
 };

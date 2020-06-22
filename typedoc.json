@@ -1,0 +1,8 @@
+{
+  "inputFiles": ["./src/*.ts"],
+  "exclude": ["./src/*.spec.ts", "./src/index.ts", "./src/interfaces"],
+  "out": "docs",
+  "plugin": "typedoc-plugin-markdown",
+  "theme": "vuepress",
+  "mode": "modules"
+}
