@@ -1,4 +1,3 @@
-import { GenericObject } from './interfaces/generics';
 import { isDate } from './is-date';
 
 /**
@@ -8,7 +7,7 @@ import { isDate } from './is-date';
  * @param first The first object to compare
  * @param second The second object to compare
  */
-export function isEqual<T extends GenericObject>(first: T, second: T): boolean {
+export function isEqual<T extends {}>(first: T, second: T): boolean {
   for (const key in first) {
     if (second.hasOwnProperty(key) === false) {
       return false;
@@ -20,7 +19,12 @@ export function isEqual<T extends GenericObject>(first: T, second: T): boolean {
     } else if (typeof e1 === 'object') {
       // Dates are also "objects", so we need to check first if elements are date
       // and compare their values if they are
-      if (isDate(e1) && isDate(e2) && e1.getTime() !== e2.getTime()) {
+      if (
+        isDate(e1) &&
+        isDate(e2) &&
+        ((e1 as unknown) as Date).getTime() !==
+          ((e2 as unknown) as Date).getTime()
+      ) {
         return false;
       } else if (isEqual(e1, e2) === false) {
         return false;

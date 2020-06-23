@@ -1,5 +1,3 @@
-import { GenericObject } from './interfaces/generics';
-
 /**
  * Takes an object and a list of properties to remove, and returns a new object equal to the original one but the listed properties removed.
  *
@@ -10,12 +8,12 @@ import { GenericObject } from './interfaces/generics';
  * @param properties An array of property names to be removed.
  */
 
-export function omit<T extends GenericObject>(source: T, properties: string[]) {
+export function omit<T, K extends keyof T>(source: T, properties: K[]) {
   // @ts-ignore
   let omitted: any;
-  let rest: GenericObject = { ...source };
+  let rest = { ...source };
   for (const property of properties) {
-    ({ [property]: omitted, ...rest } = rest);
+    ({ [property]: omitted, ...rest as Omit<T, K> } = rest);
   }
   return rest;
 }

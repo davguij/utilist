@@ -2,7 +2,7 @@ import { omit } from './omit';
 
 describe('omit', () => {
   it('should return a new object', () => {
-    const o = {};
+    const o = { key: true };
     expect(omit(o, ['key'])).not.toBe(o);
   });
 
@@ -20,7 +20,11 @@ describe('omit', () => {
   });
 
   it('should do nothing if the passed property is not found in the source', () => {
-    const o = { prop1: 'stays', prop2: 'stays', prop3: 'stays' };
+    const o: { [key: string]: any } = {
+      prop1: 'stays',
+      prop2: 'stays',
+      prop3: 'stays',
+    };
     const e = { ...o };
     const result = omit(o, ['notFoundProp']);
     expect(result).toEqual(e);
