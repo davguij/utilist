@@ -38,7 +38,9 @@ shuffle<number>([1, 2, 3, 4, 5]); // returns [2, 5, 3, 4, 1]
 
 ### List of methods
 
+- `chunk()` — Creates an array of elements split into subarrays the length of `size`. [See documentation.](https://davguij.github.io/utilist/modules/_difference_.html)
 - `difference()` — Takes two arrays and returns the difference between them as a new array. [See documentation.](https://davguij.github.io/utilist/modules/_difference_.html)
+- `filterByValue()` — Filters an object by its values. [See documentation.](https://davguij.github.io/utilist/modules/_filter_object_.html)
 - `isDate()` — Assesses if the input is of the type Date. [See documentation.](https://davguij.github.io/utilist/modules/_is_date_.html)
 - `isEqual()` — Compares two objects and returns whether their values are equivalent. [See documentation.](https://davguij.github.io/utilist/modules/_is_equal_.html)
 - `mapValues()` — Like `map()` but applied to the values of an object. [See documentation.](https://davguij.github.io/utilist/modules/_map_values_.html)

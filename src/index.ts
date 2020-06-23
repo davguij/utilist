@@ -1,4 +1,6 @@
+export * from './chunk';
 export * from './difference';
+export * from './filter-object';
 export * from './is-date';
 export * from './is-equal';
 export * from './map-values';
