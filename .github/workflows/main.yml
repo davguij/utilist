@@ -37,6 +37,11 @@ jobs:
         env:
           CI: true
 
+      - name: Coverage reporting
+        run: npx codecov
+        env:
+          CI: true
+
   build:
     runs-on: ubuntu-latest
     name: Build

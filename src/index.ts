@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 export * from './chunk';
 export * from './difference';
 export * from './filter-object';
