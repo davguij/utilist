@@ -1,6 +1,18 @@
 {
   "name": "utilist",
   "description": "A modern utility library for JavaScript and TypeScript.",
+  "keywords": [
+    "lodash",
+    "utility",
+    "utilities",
+    "utils",
+    "javascript",
+    "typescript",
+    "library",
+    "modules",
+    "zero-dependency",
+    "stdlib"
+  ],
   "version": "0.0.0-development",
   "license": "MIT",
   "sideEffects": false,
