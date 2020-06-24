@@ -1,6 +1,12 @@
 /**
  * Returns a new object identical to the `source` object, but without the entries for which the function `fn` returns false.
  *
+ * ```typescript
+ * import { filterByValue } from 'utilist';
+ *
+ * filterByValue({ a: 1, b: 2, c: 3 }, (value) => value <= 2); // returns { a: 1, b: 2 }
+ * ```
+ *
  * @param source Object to filter.
  * @param fn Function used to filter each value. Needs to return a boolean.
  */

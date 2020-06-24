@@ -1,6 +1,12 @@
 /**
  * Takes an object and a list of properties to remove, and returns a new object equal to the original one but the listed properties removed.
  *
+ * ```typescript
+ * import { omit } from 'utilist';
+ *
+ * omit({ prop1: 'stays', prop2: 'leaves' }, ['prop2']); // returns { prop1: 'stays' }
+ * ```
+ *
  * @remark
  * Currently nested properties are not supported.
  *

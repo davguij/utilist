@@ -1,6 +1,12 @@
 /**
  * Returns a random integer between a minimum and a maximum.
  *
+ * ```typescript
+ * import { random } from 'utilist';
+ *
+ * random(1, 10); // returns a random integer between 1 and 9
+ * ```
+ *
  * @remarks
  * This method does not provide cryptographically secure random numbers. Do not use them for anything related to security.
  *
