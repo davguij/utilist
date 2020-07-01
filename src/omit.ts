@@ -10,6 +10,11 @@
  * @remark
  * Currently nested properties are not supported.
  *
+ * @packageDocumentation
+ * @module omit
+ */
+
+/**
  * @param source The original object to remove the properties from.
  * @param properties An array of property names to be removed.
  */

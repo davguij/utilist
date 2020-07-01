@@ -10,6 +10,11 @@
  * @remarks
  * This method does not provide cryptographically secure random numbers. Do not use them for anything related to security.
  *
+ * @packageDocumentation
+ * @module random
+ */
+
+/**
  * @param min The lower number of the range (always inclusive).
  * @param max The higher number of the range. Defaults to `min`.
  * @param isMaxInclusive Whether the higher number of the range should be inclusive or exclusive. Defaults to `false`.

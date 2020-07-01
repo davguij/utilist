@@ -1,5 +1,3 @@
-import { isDate } from './is-date';
-
 /**
  * Compares two objects and returns whether their values are equivalent
  *
@@ -9,7 +7,13 @@ import { isDate } from './is-date';
  * isEqual({ key: 'value' }, { key: 'value' }); // returns true
  * isEqual({ key: 'value' }, { anotherKey: 'another value' }); // returns false
  * ```
- *
+ * @packageDocumentation
+ * @module isEqual
+ */
+
+import { isDate } from './is-date';
+
+/**
  * @typeParam T Type of objects to compare. Both of them have to be of the same type. Type has to extend the standard, generic JavaScript object (with strings as keys).
  * @param first The first object to compare
  * @param second The second object to compare

@@ -7,6 +7,11 @@
  * chunk([0, 1, 2, 3, 4, 5], 4); // returns [[0, 1, 2, 3], [4, 5]]
  * ```
  *
+ * @packageDocumentation
+ * @module chunk
+ */
+
+/**
  * @param elements The array to split.
  * @param size The amount of elements in each subarrays.
  */

@@ -7,7 +7,11 @@
  * occurrences('mississippi', 'i'); // returns 4
  * occurrences('mississippi', 'ssi'); // returns 2
  * ```
- *
+ * @packageDocumentation
+ * @module occurrences
+ */
+
+/**
  * @param input The string to search in.
  * @param search The substring to be searched.
  */

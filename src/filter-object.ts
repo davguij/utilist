@@ -7,6 +7,12 @@
  * filterByValue({ a: 1, b: 2, c: 3 }, (value) => value <= 2); // returns { a: 1, b: 2 }
  * ```
  *
+ * @packageDocumentation
+ * @module filterObject
+ *
+ */
+
+/**
  * @param source Object to filter.
  * @param fn Function used to filter each value. Needs to return a boolean.
  */

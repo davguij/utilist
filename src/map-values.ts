@@ -7,6 +7,12 @@
  * mapValues({ one: 'one' }, (item) => item.toUpperCase()); // returns { one: 'ONE' }
  * ```
  *
+ * @packageDocumentation
+ * @module mapValues
+ *
+ */
+
+/**
  * @param source Object to map the values from.
  * @param fn Function to apply to each value.
  */
